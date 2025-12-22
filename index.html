@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Harsh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/4.1.11/lib.min.js"
+        integrity="sha512-tE7j0ptGYRtx0sHRAOkHNLAuIqVW7udzmjvNh1A6vIEnWUJnx7j7khwTEjemjDaauV+lHo0jEtdW8jn5weoxhw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <meta name="theme-color" content="#0B0A0C">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+
+        @media screen and (max-width: 768px) {
+            #home {
+                padding-top: 26vh;
+            }
+        }
+    </style>
+</head>
+
+<body class="text-white relative overflow-x-hidden">
+
+    <div class="floating-shapes">
+        <div class="shape w-20 h-20 left-10" style="animation-delay: 0s; animation-duration: 25s;"></div>
+        <div class="shape w-32 h-32 right-20" style="animation-delay: -5s; animation-duration: 30s;"></div>
+        <div class="shape w-16 h-16 left-1/2" style="animation-delay: -10s; animation-duration: 20s;"></div>
+        <div class="shape w-24 h-24 right-10" style="animation-delay: -15s; animation-duration: 35s;"></div>
+        <div class="shape w-12 h-12 left-1/4" style="animation-delay: -20s; animation-duration: 28s;"></div>
+    </div>
+
+
+    <div class="section-indicator">
+        <div class="section-dot active" data-section="home"></div>
+        <div class="section-dot" data-section="work"></div>
+        <div class="section-dot" data-section="services"></div>
+        <div class="section-dot" data-section="skills"></div>
+        <div class="section-dot" data-section="contact"></div>
+    </div>
+
+
+    <nav class="fixed top-0 w-full z-50 navbar-bg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold gradient-text mono">Portfolio</div>
+
+
+                <div class="hidden lg:flex space-x-8">
+                    <a href="#home" class="hover:text-purple-300 transition-colors mono text-sm font-medium">HOME</a>
+                    <a href="#work" class="hover:text-purple-300 transition-colors mono text-sm font-medium">WORK</a>
+                    <a href="#services"
+                        class="hover:text-purple-300 transition-colors mono text-sm font-medium">SERVICES</a>
+                    <a href="#skills"
+                        class="hover:text-purple-300 transition-colors mono text-sm font-medium">SKILLS</a>
+                    <a href="#contact"
+                        class="hover:text-purple-300 transition-colors mono text-sm font-medium">CONTACT</a>
+                </div>
+
+                <div class="lg:hidden">
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <a href="#home" class="text-2xl mono hover:text-purple-300 transition-colors font-medium">HOME</a>
+            <a href="#work" class="text-2xl mono hover:text-purple-300 transition-colors font-medium">WORK</a>
+            <a href="#services" class="text-2xl mono hover:text-purple-300 transition-colors font-medium">SERVICES</a>
+            <a href="#skills" class="text-2xl mono hover:text-purple-300 transition-colors font-medium">SKILLS</a>
+            <a href="#contact" class="text-2xl mono hover:text-purple-300 transition-colors font-medium">CONTACT</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative">
+        <div class="container mx-auto px-4 z-10">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-8 fade-in-up">
+                        <div class="space-y-6">
+                            <p class="mono text-purple-300 text-lg tracking-wider">Hello, I'm</p>
+                            <h1 class="text-5xl md:text-6xl lg:text-8xl font-black gradient-text leading-tight">Harsh
+                            </h1>
+                            <div class="text-2xl md:text-3xl lg:text-4xl text-gray-300 typing-effec  font-light typee">
+                                Professional Video editor and Multimedia Content Strategist</div>
+                        </div>
+
+                        <p class="text-xl text-gray-400 leading-relaxed max-w-lg">
+                            From raw footage to refined narratives — elevating brands with professional video editing and content strategy.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <!-- Get In Touch Button -->
+                            <a href="#contact"
+                                class="gradient-purple px-8 py-4 rounded-full font-semibold hover-lift neon-glow text-center">
+                                <span class="flex items-center justif y-center gap-2">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                    Get In Touch
+                                </span>
+                            </a>
+
+                            <!-- View My Work Button -->
+                            <a href="#work"
+                                class="glass-morphism px-8 py-4 rounded-full font-semibold hover-lift text-center">
+                                <span class="flex items-center justify-center gap-2">
+                                    <i data-lucide="play-circle" class="w-5 h-5"></i>
+                                    View My Work
+                                </span>
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                    <!--! Change here to change the infomation for the projects  -->
+
+                    <div class="relative fade-in-up">
+                        <div class="glass-morphism p-8 rounded-3xl hover-lift">
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-3 h-3 bg-green-400 rounded-full pulse-dot"></div>
+                                    <span class="mono text-sm text-gray-300 tracking-wider">AVAILABLE FOR
+                                        PROJECTS</span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-6">
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold gradient-text">6</div>
+                                        <div class="mono text-sm text-gray-400">Companies I've worked for</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold gradient-text">30+</div>
+                                        <div class="mono text-sm text-gray-400">Clients</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold gradient-text">3+</div>
+                                        <div class="mono text-sm text-gray-400">Years</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-3xl font-bold gradient-text">100%</div>
+                                        <div class="mono text-sm text-gray-400">Satisfaction</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+
+    <!--! Change here to change the infomation for the projects  -->
+    <section id="work" class="py-24 relative ">
+        <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 fade-in-up">
+                    <h2 class="text-4xl md:text-5xl lg:text-7xl font-black gradient-text mb-6">Recent Work</h2>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                        Showcasing my latest video editing projects that demonstrate creativity, technical expertise,
+                        and compelling storytelling.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+
+
+
+                    <!-- !change the video url and the title and the description and the category here -->
+
+
+                <div class="glass-morphism rounded-3xl hover-lift card-hover fade-in-up relative group p-0"
+     style="transition: 0.3s ease-in;">
+
+    <!-- video FULL BLEED -->
+                <div class="video-wrapper bg-gradient-to-br from-blue-600 to-purple-600 
+                            rounded-3xl flex items-center justify-center relative overflow-hidden"
+                        style="margin:0; width:100%; height:auto;">
+
+                    <video class="video-element w-full h-full hidden group-hover:block" loop muted playsinline preload="metadata">
+                        <source src="assert/videos/1.mp4" type="video/mp4">
+        </video>
+
+        <i data-lucide="play-circle" class="w-16 h-16 text-white/90 group-hover:hidden"></i>
+
+        <div class="absolute inset-0 bg-gradient-to-br from-transparent to-black/30"></div>
+
+
+                            <button
+                                class="absolute bottom-4 right-4 p-2 bg-black/50 rounded-full hidden group-hover:block z-10 mute-btn"
+                                style="transition: 0.3s ease-in; cursor: pointer;">
+                                <i data-lucide="volume-2" class="w-4 h-4 text-white hidden muted"></i>
+                                <i data-lucide="volume-x" class="w-4 h-4 text-white  unmuted"></i>
+                            </button>
+                        </div>
+
+                        <div class="space-y-4 group-hover:hidden">
+                            <div class="flex items-center gap-2">
+                                
+                            </div>
+                            <h3 class="text-xl font-semibold">SAMPLE 1 </h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                               
+                            </p>
+                        </div>
+                        <h3 class="text-xl font-semibold absolute bottom-6 left-6 hidden group-hover:block">SAMPLE 1</h3>
+                    </div>
+                    
+                    <div class="glass-morphism p-6 rounded-3xl hover-lift card-hover fade-in-up relative group"
+                        style="transition: 0.3s ease-in;">
+
+                        <div class="video-wrapper bg-gradient-to-br from-blue-600 to-purple-600 
+         rounded-3xl flex items-center justify-center relative overflow-hidden"
+         style="margin:0; width:100%; height:auto;">
+
+        <video class="video-element w-full h-full hidden group-hover:block" loop muted playsinline preload="metadata">
+            <source src="assert/videos/2.mp4" type="video/mp4">
+        </video>
+
+        <i data-lucide="play-circle" class="w-16 h-16 text-white/90 group-hover:hidden"></i>
+
+        <div class="absolute inset-0 bg-gradient-to-br from-transparent to-black/30"></div>
+
+
+                            <button
+                                class="absolute bottom-4 right-4 p-2 bg-black/50 rounded-full hidden group-hover:block z-10 mute-btn"
+                                style="transition: 0.3s ease-in; cursor: pointer;">
+                                <i data-lucide="volume-2" class="w-4 h-4 text-white hidden muted"></i>
+                                <i data-lucide="volume-x" class="w-4 h-4 text-white  unmuted"></i>
+                            </button>
+                        </div>
+
+                        <div class="space-y-4 group-hover:hidden">
+                            <div class="flex items-center gap-2">
+                                
+                            </div>
+                            <h3 class="text-xl font-semibold">SAMPLE 2 </h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                               
+                            </p>
+                        </div>
+                        <h3 class="text-xl font-semibold absolute bottom-6 left-6 hidden group-hover:block">SAMPLE 2</h3>
+                    </div>
+                    <div class="glass-morphism p-6 rounded-3xl hover-lift card-hover fade-in-up relative group"
+                        style="transition: 0.3s ease-in;">
+
+                        <div
+                            class="video-wrapper bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden group-hover:h-[35vh] group-hover:w-[90%] group-hover:mx-auto group-hover:mb-0 transition-all duration-300">
+
+                            <video class="video-element w-full h-full hidden group-hover:block" loop muted playsinline preload="metadata">
+                                <source src="assert/videos/3.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <i data-lucide="play-circle" class="w-16 h-16 text-white/90 group-hover:hidden"></i>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/30">
+                            </div>
+
+                            <button
+                                class="absolute bottom-4 right-4 p-2 bg-black/50 rounded-full hidden group-hover:block z-10 mute-btn"
+                                style="transition: 0.3s ease-in; cursor: pointer;">
+                                <i data-lucide="volume-2" class="w-4 h-4 text-white hidden muted"></i>
+                                <i data-lucide="volume-x" class="w-4 h-4 text-white  unmuted"></i>
+                            </button>
+                        </div>
+
+                        <div class="space-y-4 group-hover:hidden">
+                            <div class="flex items-center gap-2">
+                                
+                            </div>
+                            <h3 class="text-xl font-semibold">SAMPLE 3</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                
+                            </p>
+                        </div>
+
+                        <h3 class="text-xl font-semibold absolute bottom-6 left-6 hidden group-hover:block">SAMPLE 3</h3>
+                    </div>
+
+                    <!-- Added video card 4 -->
+      <div class="glass-morphism p-6 rounded-3xl hover-lift card-hover fade-in-up relative group"
+                        style="transition: 0.3s ease-in;">
+
+                        <div
+                            class="video-wrapper bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden group-hover:h-[35vh] group-hover:w-[90%] group-hover:mx-auto group-hover:mb-0 transition-all duration-300">
+
+                            <video class="video-element w-full h-full hidden group-hover:block" loop muted playsinline preload="metadata">
+                                <source src="assert/videos/4.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+
+                            <i data-lucide="play-circle" class="w-16 h-16 text-white/90 group-hover:hidden"></i>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/30">
+                            </div>
+
+                            <button
+                                class="absolute bottom-4 right-4 p-2 bg-black/50 rounded-full hidden group-hover:block z-10 mute-btn"
+                                style="transition: 0.3s ease-in; cursor: pointer;">
+                                <i data-lucide="volume-2" class="w-4 h-4 text-white hidden muted"></i>
+                                <i data-lucide="volume-x" class="w-4 h-4 text-white  unmuted"></i>
+                            </button>
+                        </div>
+
+                        <div class="space-y-4 group-hover:hidden">
+                            <div class="flex items-center gap-2">
+                                
+                            </div>
+                            <h3 class="text-xl font-semibold">SAMPLE 4</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                
+                            </p>
+                        </div>
+
+                        <h3 class="text-xl font-semibold absolute bottom-6 left-6 hidden group-hover:block">SAMPLE 4</h3>
+                    </div>
+
+                    <!-- Added video card 5 -->
+                    <div class="glass-morphism p-6 rounded-3xl hover-lift card-hover fade-in-up relative group"
+                        style="transition: 0.3s ease-in;">
+
+                        <div
+                            class="video-wrapper bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl mb-6 flex items-center justify-center relative overflow-hidden group-hover:h-[35vh] group-hover:w-[90%] group-hover:mx-auto group-hover:mb-0 transition-all duration-300">
+
+                            <video class="video-element w-full h-full hidden group-hover:block" loop muted playsinline preload="metadata">
+                                <source src="assert/videos/5.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+
+                            <i data-lucide="play-circle" class="w-16 h-16 text-white/90 group-hover:hidden"></i>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/30">
+                            </div>
+
+                            <button
+                                class="absolute bottom-4 right-4 p-2 bg-black/50 rounded-full hidden group-hover:block z-10 mute-btn"
+                                style="transition: 0.3s ease-in; cursor: pointer;">
+                                <i data-lucide="volume-2" class="w-4 h-4 text-white hidden muted"></i>
+                                <i data-lucide="volume-x" class="w-4 h-4 text-white  unmuted"></i>
+                            </button>
+                        </div>
+
+                        <div class="space-y-4 group-hover:hidden">
+                            <div class="flex items-center gap-2">
+                                
+                            </div>
+                            <h3 class="text-xl font-semibold">SAMPLE 5</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                
+                            </p>
+                        </div>
+
+                        <h3 class="text-xl font-semibold absolute bottom-6 left-6 hidden group-hover:block">SAMPLE 5</h3>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+<!-- Graphic Design Gallery — FULL-IMAGE (6 cards) -->
+<div class="container mx-auto px-4" style="margin-top: 8vh">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16 fade-in-up">
+      <p class="mono text-purple-300 mb-4 tracking-wider"></p>
+      <h2 class="text-4xl md:text-5xl lg:text-7xl font-black gradient-text mb-6">Graphic Design Gallery</h2>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+        Thumbnails, posters, banners and branding mockups — a selection of my best graphic design work.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <div class="glass-morphism p-6 rounded-3xl hover-lift card-hover fade-in-up graphic-card">
+        <div class="aspect-video mb-6 overflow-hidden rounded-2xl flex items-center justify-center">
+          <img src="assert/graphic1.jpg" alt="Poster Design" class="w-full h-full object-contain">
+        </div>
+        <div class="space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="mono text-xs px-3 py-1 bg-purple-500/20 rounded-full border border-purple-500/30">Advertisement</span>
+          </div>
+          <h3 class="text-xl font-semibold">Brand visual advertisement</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Sports-themed promotional ad and brand storytelling.
+</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="glass-morphism p-6 rounded-3xl hover-lift card-hover fade-in-up graphic-card">
+        <div class="aspect-video mb-6 overflow-hidden rounded-2xl flex items-center justify-center">
+          <img src="assert/graphic2.png" alt="YouTube Thumbnail" class="w-full h-full object-contain">
+        </div>
+        <div class="space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="mono text-xs px-3 py-1 bg-purple-500/20 rounded-full border border-purple-500/30">Thumbnail</span>
+          </div>
+          <h3 class="text-xl font-semibold">YouTube Thumbnail Series</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Click-worthy thumbnails designed for higher CTR on YouTube and Shorts.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="glass-morphism p-6 rounded-3xl hover-lift card-hover fade-in-up graphic-card">
+        <div class="aspect-video mb-6 overflow-hidden rounded-2xl flex items-center justify-center">
+          <img src="assert/graphic3.png" alt="Social Carousel" class="w-full h-full object-contain">
+        </div>
+        <div class="space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="mono text-xs px-3 py-1 bg-purple-500/20 rounded-full border border-purple-500/30">Social</span>
+          </div>
+          <h3 class="text-xl font-semibold">Instagram Carousel</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Aesthetic carousel templates for your social accounts.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="glass-morphism p-6 rounded-3xl hover-lift card-hover fade-in-up graphic-card">
+        <div class="aspect-video mb-6 overflow-hidden rounded-2xl flex items-center justify-center">
+          <img src="assert/graphic4.png" alt="Branding Mockup" class="w-full h-full object-contain">
+        </div>
+        <div class="space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="mono text-xs px-3 py-1 bg-purple-500/20 rounded-full border border-purple-500/30">Branding</span>
+          </div>
+          <h3 class="text-xl font-semibold">Branding Mockup — Studio Identity</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Logo and stationery mockups created for a small creative studio.</p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="glass-morphism p-6 rounded-3xl hover-lift card-hover fade-in-up graphic-card">
+        <div class="aspect-video mb-6 overflow-hidden rounded-2xl flex items-center justify-center">
+          <img src="assert/graphic5.png" alt="Banner Design" class="w-full h-full object-contain">
+        </div>
+        <div class="space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="mono text-xs px-3 py-1 bg-purple-500/20 rounded-full border border-purple-500/30">Banner</span>
+          </div>
+          <h3 class="text-xl font-semibold">Website Banner — Launch Campaign</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Bold hero banners designed for product launches and landing pages.</p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="glass-morphism p-6 rounded-3xl hover-lift card-hover fade-in-up graphic-card">
+        <div class="aspect-video mb-6 overflow-hidden rounded-2xl flex items-center justify-center">
+          <img src="assert/graphic6.jpg" alt="Poster Series" class="w-full h-full object-contain">
+        </div>
+        <div class="space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="mono text-xs px-3 py-1 bg-purple-500/20 rounded-full border border-purple-500/30">Thumbnail</span>
+          </div>
+          <h3 class="text-xl font-semibold">Reel/Shorts thumbnails</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Minimal thumbnails to improve CTR.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+    <!--! Change here to change the infomation for the services  -->
+    <!-- Services Section -->
+    <section id="services" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 fade-in-up">
+                    <h2 class="text-4xl md:text-5xl lg:text-7xl font-black gradient-text mb-6">What I Offer</h2>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                        Comprehensive creative services that combine technical expertise with artistic vision to deliver
+                        exceptional results.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+
+                    <div class="glass-morphism p-8 rounded-3xl hover-lift card-hover fade-in-up">
+                        <div class="service-icon">
+                            <i data-lucide="scissors" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Video Editing</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Seamless editing for short and long content tailored for YouTube, Reels, and other
+                            platforms.
+                        </p>
+                    </div>
+
+
+                    <div class="glass-morphism p-8 rounded-3xl hover-lift card-hover fade-in-up">
+                        <div class="service-icon">
+                            <i data-lucide="book-headphones"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Storytelling</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                           Weaving raw visuals into timeless stories that resonate and inspire.
+                        </p>
+                    </div>
+
+
+                    <div class="glass-morphism p-8 rounded-3xl hover-lift card-hover fade-in-up">
+                        <div class="service-icon">
+                            <i data-lucide="book-text"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Scripting</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Strategic scripting that transforms visions into cinematic experiences.
+                        </p>
+                    </div>
+
+
+                    <div class="glass-morphism p-8 rounded-3xl hover-lift card-hover fade-in-up">
+                        <div class="service-icon">
+                            <i data-lucide="pen-tool" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Graphics Designing</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Stunning visual designs including thumbnails, posters, and banners to elevate your brand.
+                        </p>
+                    </div>
+
+
+                    <div class="glass-morphism p-8 rounded-3xl hover-lift card-hover fade-in-up">
+                        <div class="service-icon">
+                            <i data-lucide="videotape"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Motion graphic</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Motion graphics that captivate, communicate, and elevate every narrative.
+                        </p>
+                    </div>
+
+
+                    <div class="glass-morphism p-8 rounded-3xl hover-lift card-hover fade-in-up">
+                        <div class="service-icon">
+                            <i data-lucide="tv-minimal-play"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">SMM</h3>
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            Social media strategies that engage, inspire, and convert.
+                        </p>
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+<section id="skills" class="py-20 relative">
+    <div class="container mx-auto px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 fade-in-up">
+                <h2 class="text-4xl md:text-5xl lg:text-7xl font-black gradient-text mb-6">Skills & Tools</h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Mastery of industry-standard tools and cutting-edge technologies for creating exceptional
+                    digital experiences.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8">
+                
+                <!-- LEFT COLUMN (2 Skills) -->
+                <div class="space-y-6 fade-in-up">
+
+                    <!-- Premiere Pro -->
+                    <div class="glass-morphism p-6 rounded-3xl hover-lift">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="film" class="w-6 h-6 text-blue-500"></i>
+                                <span class="text-lg font-semibold">Premiere Pro</span>
+                            </div>
+                            <span class="mono text-sm text-gray-400">100%</span>
+                        </div>
+                        <div class="skill-bar bg-gray-700/30 h-2 rounded-full overflow-hidden">
+                            <div class="skill-progress bg-blue-500 h-2" style="width: 100%"></div>
+                        </div>
+                    </div>
+
+                    <!-- After Effects -->
+                    <div class="glass-morphism p-6 rounded-3xl hover-lift">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="sparkles" class="w-6 h-6 text-purple-500"></i>
+                                <span class="text-lg font-semibold">After Effects</span>
+                            </div>
+                            <span class="mono text-sm text-gray-400">100%</span>
+                        </div>
+                        <div class="skill-bar bg-gray-700/30 h-2 rounded-full overflow-hidden">
+                            <div class="skill-progress bg-purple-500 h-2" style="width: 100%"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT COLUMN (2 Skills) -->
+                <div class="space-y-6 fade-in-up">
+
+                    <!-- DaVinci Resolve -->
+                    <div class="glass-morphism p-6 rounded-3xl hover-lift">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="circle" class="w-6 h-6 text-yellow-400"></i>
+                                <span class="text-lg font-semibold">DaVinci Resolve</span>
+                            </div>
+                            <span class="mono text-sm text-gray-400">70%</span>
+                        </div>
+                        <div class="skill-bar bg-gray-700/30 h-2 rounded-full overflow-hidden">
+                            <div class="skill-progress bg-yellow-400 h-2" style="width: 70%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Photoshop -->
+                    <div class="glass-morphism p-6 rounded-3xl hover-lift">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="image" class="w-6 h-6 text-red-500"></i>
+                                <span class="text-lg font-semibold">Photoshop</span>
+                            </div>
+                            <span class="mono text-sm text-gray-400">99%</span>
+                        </div>
+                        <div class="skill-bar bg-gray-700/30 h-2 rounded-full overflow-hidden">
+                            <div class="skill-progress bg-red-500 h-2" style="width: 100%"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!--! Contact Section -->
+
+
+    <section id="contact" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16 fade-in-up">
+                    <h2 class="text-4xl md:text-5xl lg:text-7xl font-black gradient-text mb-6">Let's Create</h2>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                        Ready to bring your vision to life? Let's collaborate and create something extraordinary
+                        together.
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div class="space-y-8 fade-in-up">
+                        <div class="glass-morphism p-8 rounded-3xl hover-lift">
+                            <h3 class="text-2xl font-semibold mb-6">Get In Touch</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center">
+                                        <i data-lucide="mail" class="w-6 h-6 text-purple-400"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">Email</p>
+                                        <p class="text-gray-400 mono">Harshcnear@gmail.com</p>
+                                    </div>
+                                </div>
+
+
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center">
+                                        <i data-lucide="map-pin" class="w-6 h-6 text-green-400"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-medium">Location</p>
+                                        <p class="text-gray-400 mono">Available Worldwide</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-morphism p-8 rounded-3xl hover-lift">
+                            <h3 class="text-2xl font-semibold mb-6">Follow Me</h3>
+                            <div class="flex gap-4">
+
+                                <a href="https://www.instagram.com/rawharshh/"
+                                    class="w-12 h-12 bg-pink-500/20 rounded-xl flex items-center justify-center hover:bg-pink-500/30 transition-colors " rel="noopener noreferrer"target="_blank">
+                                    <i data-lucide="instagram" class="w-6 h-6 text-pink-400"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fade-in-up">
+                        <div class="glass-morphism p-8 rounded-3xl hover-lift">
+                            <h3 class="text-2xl font-semibold mb-6">Send Message</h3>
+                            <form class="space-y-6" action="https://api.web3forms.com/submit" method="POST">
+                                <input type="hidden" name="access_key" value="c0a30466-9412-4fc8-8e73-fd3f64be1545">
+                                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Name</label>
+                                        <input type="text" name="name" required
+                                            class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:border-purple-500 focus:outline-none transition-colors"
+                                            placeholder="Your name">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium mb-2">Email</label>
+                                        <input type="email" name="email" required
+                                            class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:border-purple-500 focus:outline-none transition-colors"
+                                            placeholder="Your email">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Subject</label>
+                                    <input type="text" name="subject" required
+                                        class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:border-purple-500 focus:outline-none transition-colors"
+                                        placeholder="Project subject">
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium mb-2">Message</label>
+                                    <textarea rows="6" name="message" required
+                                        class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl focus:border-purple-500 focus:outline-none transition-colors resize-none"
+                                        placeholder="Tell me about your project..."></textarea>
+                                </div>
+
+                                <button type="submit"
+                                    class="w-full gradient-purple py-4 rounded-xl font-semibold hover-lift neon-glow">
+                                    <span class="flex items-center justify-center gap-2">
+                                        <i data-lucide="send" class="w-5 h-5"></i>
+                                        Send Message
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/10">
+        <div class="container mx-auto px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center justify-between">
+                    <div class="text-2xl font-bold gradient-text mono mb-4 md:mb-0">RAWHARSHH</div>
+                    <div class="flex items-center gap-8">
+                        <div class="flex items-center gap-2">
+                            <div class="w-2 h-2 bg-green-400 rounded-full pulse-dot"></div>
+                            <span class="text-sm text-gray-400">Available for work</span>
+                        </div>
+                        <p class="text-gray-400 text-sm">Developed by <a href="https://www.linkedin.com/in/chetanya-07%E3%85%A4%E3%85%A4-872287303/"
+                                class="text-blue-400 hover:text-blue-300 transition-colors" target="_blank" rel="noopener noreferrer">Chetanya</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+
+</html>
