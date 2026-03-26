@@ -113,43 +113,36 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// 🔥 FIXED VIDEO HOVER LOGIC (CRITICAL FIX)
+// 🔥 OPTIMIZED VIDEO LOADING — lazy load on first hover only
 document.querySelectorAll(".glass-morphism").forEach((card) => {
+  const video = card.querySelector("video");
+  if (!video) return;
+
+  // Ensure preload is none — don't fetch anything until hovered
+  video.preload = "none";
+
+  let loaded = false;
 
   card.addEventListener("mouseenter", () => {
-    const video = card.querySelector("video"); // moved inside
-
-    if (video) {
-      video.currentTime = 0;
-
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {}); // prevent errors
-      }
+    if (!loaded) {
+      video.load(); // fetch video data only on first hover
+      loaded = true;
     }
+
+    video.currentTime = 0;
+    video.play().catch(() => {}); // suppress autoplay policy errors
   });
 
   card.addEventListener("mouseleave", () => {
-    const video = card.querySelector("video"); // moved inside
-
-    if (video) {
-      video.pause();
-    }
+    video.pause();
   });
-
 });
 
-// 🔥 FORCE VIDEO INITIALIZATION (helps last card issue)
-document.querySelectorAll("video").forEach((video) => {
-  video.load();
-});
-
-// Mute button
+// 🔥 Mute button toggle
 document.querySelectorAll(".mute-btn").forEach((button) => {
   button.addEventListener("click", () => {
     const muteIcon = button.querySelector(".muted");
     const unmuteIcon = button.querySelector(".unmuted");
-
     const video = button.closest(".glass-morphism")?.querySelector("video");
 
     if (video) {
