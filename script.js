@@ -29,7 +29,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Observe all fade-in-up elements
+// Observe fade-in elements
 document.querySelectorAll(".fade-in-up").forEach((el) => {
   observer.observe(el);
 });
@@ -44,7 +44,6 @@ const sectionObserver = new IntersectionObserver(
       if (entry.isIntersecting) {
         const sectionId = entry.target.getAttribute("id");
 
-        // Update active dot
         sectionDots.forEach((dot) => {
           dot.classList.remove("active");
           if (dot.dataset.section == sectionId) {
@@ -54,20 +53,19 @@ const sectionObserver = new IntersectionObserver(
       }
     });
   },
-  {
-    threshold: 0.3,
-  }
+  { threshold: 0.3 }
 );
 
 sections.forEach((section) => {
   sectionObserver.observe(section);
 });
 
-// Section dot click handlers
+// Section dot click
 sectionDots.forEach((dot) => {
   dot.addEventListener("click", () => {
     const sectionId = dot.dataset.section;
     const section = document.getElementById(sectionId);
+
     if (section) {
       section.scrollIntoView({
         behavior: "smooth",
@@ -77,14 +75,17 @@ sectionDots.forEach((dot) => {
   });
 });
 
-// Animate skill bars when they come into view
+// Skill bars animation
 const skillBars = document.querySelectorAll(".skill-progress");
+
 const skillObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       const bar = entry.target;
       const width = bar.style.width;
+
       bar.style.width = "0%";
+
       setTimeout(() => {
         bar.style.width = width;
       }, 300);
@@ -96,16 +97,14 @@ skillBars.forEach((bar) => {
   skillObserver.observe(bar);
 });
 
-// Parallax effect for floating shapes
-
-// Add loading animation to page
+// Page load animation
 window.addEventListener("load", () => {
   document.body.classList.add("loaded");
 });
 
 // Navbar background on scroll
-
 const navbar = document.querySelector("nav");
+
 window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
     navbar.style.background = "rgba(10, 10, 10, 0.2)";
