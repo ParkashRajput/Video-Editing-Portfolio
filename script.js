@@ -113,33 +113,44 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// for video play on hover
-
+// 🔥 FIXED VIDEO HOVER LOGIC (CRITICAL FIX)
 document.querySelectorAll(".glass-morphism").forEach((card) => {
-  const video = card.querySelector("video");
 
   card.addEventListener("mouseenter", () => {
+    const video = card.querySelector("video"); // moved inside
+
     if (video) {
       video.currentTime = 0;
-      video.play();
+
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {}); // prevent errors
+      }
     }
   });
 
   card.addEventListener("mouseleave", () => {
+    const video = card.querySelector("video"); // moved inside
+
     if (video) {
       video.pause();
     }
   });
+
 });
 
-// for mute button
+// 🔥 FORCE VIDEO INITIALIZATION (helps last card issue)
+document.querySelectorAll("video").forEach((video) => {
+  video.load();
+});
 
+// Mute button
 document.querySelectorAll(".mute-btn").forEach((button) => {
   button.addEventListener("click", () => {
     const muteIcon = button.querySelector(".muted");
     const unmuteIcon = button.querySelector(".unmuted");
 
-    const video = button.closest(".glass-morphism").querySelector("video");
+    const video = button.closest(".glass-morphism")?.querySelector("video");
 
     if (video) {
       video.muted = !video.muted;
@@ -149,27 +160,29 @@ document.querySelectorAll(".mute-btn").forEach((button) => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const wrappers = document.querySelectorAll('.video-wrapper');
+// Video orientation detection
+document.addEventListener("DOMContentLoaded", () => {
+  const wrappers = document.querySelectorAll(".video-wrapper");
 
-  wrappers.forEach(wrapper => {
-    const video = wrapper.querySelector('video');
-
+  wrappers.forEach((wrapper) => {
+    const video = wrapper.querySelector("video");
     if (!video) return;
 
     const setOrientation = () => {
       const w = video.videoWidth || 1;
       const h = video.videoHeight || 1;
 
-      wrapper.classList.remove('landscape','portrait','square');
+      wrapper.classList.remove("landscape", "portrait", "square");
 
-      if (w > h) wrapper.classList.add('landscape');
-      else if (h > w) wrapper.classList.add('portrait');
-      else wrapper.classList.add('square');
+      if (w > h) wrapper.classList.add("landscape");
+      else if (h > w) wrapper.classList.add("portrait");
+      else wrapper.classList.add("square");
     };
 
-    if (video.readyState >= 1) setOrientation();
-    else video.addEventListener('loadedmetadata', setOrientation, { once: true });
-
+    if (video.readyState >= 1) {
+      setOrientation();
+    } else {
+      video.addEventListener("loadedmetadata", setOrientation, { once: true });
+    }
   });
 });
